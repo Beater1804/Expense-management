@@ -15,7 +15,7 @@ class TransactionList extends StatelessWidget {
       child: transactions.isEmpty
           ? Column(
               children: <Widget>[
-                Text('No transactions'),
+                Text('Opps, bạn chưa mua gì cả !!!'),
                 SizedBox(
                   height: 10,
                 ),
@@ -46,7 +46,7 @@ class TransactionList extends StatelessWidget {
                         ),
                         padding: EdgeInsets.all(10),
                         child: Text(
-                          transactions[index].amount.toString().toVND(),
+                          transactions[index].amount.toInt().toString().toVND(),
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
