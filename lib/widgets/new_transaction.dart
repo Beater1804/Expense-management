@@ -61,13 +61,13 @@ class _NewTransactionState extends State<NewTransaction> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             TextField(
-              decoration: InputDecoration(labelText: 'Title'),
+              decoration: InputDecoration(labelText: 'Sản phẩm đã mua'),
               controller: _titleController,
               textInputAction: TextInputAction.next,
               // onChanged: (val) => titleInput = val,
             ),
             TextField(
-              decoration: InputDecoration(labelText: 'Amount'),
+              decoration: InputDecoration(labelText: 'Giá tiền'),
               controller: _amountController,
               keyboardType: TextInputType.number,
               textInputAction: TextInputAction.done,
@@ -82,14 +82,14 @@ class _NewTransactionState extends State<NewTransaction> {
                   Expanded(
                     child: Text(
                       _selectedDate == null
-                          ? 'No Date Chosen'
-                          : 'Picked Date: ${DateFormat.yMd().format(_selectedDate!)}',
+                          ? 'Chưa chọn ngày'
+                          : 'Ngày đã chọn: ${DateFormat.yMd().format(_selectedDate!)}',
                     ),
                   ),
                   FlatButton(
                     textColor: Theme.of(context).primaryColor,
                     child: Text(
-                      'Choose Date',
+                      'Chọn Ngày',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -101,7 +101,7 @@ class _NewTransactionState extends State<NewTransaction> {
             ),
             RaisedButton(
               color: Theme.of(context).primaryColorDark,
-              child: Text('Add Transaction'),
+              child: Text('Thêm sản phẩm'),
               textColor: Theme.of(context).buttonColor,
               onPressed: _onSubmitData,
             )

@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Expense Management',
+      title: 'Quản Lý Chi Tiêu',
       theme: ThemeData(
         primarySwatch: Colors.cyan,
         accentColor: Colors.lightBlue[300],
@@ -108,8 +108,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Expense Management',
-            style: TextStyle(fontFamily: 'OpenSans')),
+        title:
+            Text('Quản Lý Chi Tiêu', style: TextStyle(fontFamily: 'OpenSans')),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
