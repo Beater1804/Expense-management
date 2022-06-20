@@ -53,59 +53,66 @@ class _NewTransactionState extends State<NewTransaction> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-      child: Container(
-        padding: EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            TextField(
-              decoration: InputDecoration(labelText: 'Sản phẩm đã mua'),
-              controller: _titleController,
-              textInputAction: TextInputAction.next,
-              // onChanged: (val) => titleInput = val,
-            ),
-            TextField(
-              decoration: InputDecoration(labelText: 'Giá tiền'),
-              controller: _amountController,
-              keyboardType: TextInputType.number,
-              textInputAction: TextInputAction.done,
-              onSubmitted: (_) => _onSubmitData,
+    return SingleChildScrollView(
+      child: Card(
+        elevation: 5,
+        child: Container(
+          padding: EdgeInsets.only(
+            top: 10,
+            left: 10,
+            right: 10,
+            bottom: MediaQuery.of(context).viewInsets.bottom + 10,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              TextField(
+                decoration: InputDecoration(labelText: 'Sản phẩm đã mua'),
+                controller: _titleController,
+                textInputAction: TextInputAction.next,
+                // onChanged: (val) => titleInput = val,
+              ),
+              TextField(
+                decoration: InputDecoration(labelText: 'Giá tiền'),
+                controller: _amountController,
+                keyboardType: TextInputType.number,
+                textInputAction: TextInputAction.done,
+                onSubmitted: (_) => _onSubmitData,
 
-              // onChanged: (val) => amountInput = val,
-            ),
-            Container(
-              height: 70,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Text(
-                      _selectedDate == null
-                          ? 'Chưa chọn ngày'
-                          : 'Ngày đã chọn: ${DateFormat.yMd().format(_selectedDate!)}',
-                    ),
-                  ),
-                  FlatButton(
-                    textColor: Theme.of(context).primaryColor,
-                    child: Text(
-                      'Chọn Ngày',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                // onChanged: (val) => amountInput = val,
+              ),
+              Container(
+                height: 70,
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Text(
+                        _selectedDate == null
+                            ? 'Chưa chọn ngày'
+                            : 'Ngày đã chọn: ${DateFormat.yMd().format(_selectedDate!)}',
                       ),
                     ),
-                    onPressed: _presentDatePicker,
-                  ),
-                ],
+                    FlatButton(
+                      textColor: Theme.of(context).primaryColor,
+                      child: Text(
+                        'Chọn Ngày',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      onPressed: _presentDatePicker,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            RaisedButton(
-              color: Theme.of(context).primaryColorDark,
-              child: Text('Thêm sản phẩm'),
-              textColor: Theme.of(context).buttonColor,
-              onPressed: _onSubmitData,
-            )
-          ],
+              RaisedButton(
+                color: Theme.of(context).primaryColorDark,
+                child: Text('Thêm sản phẩm'),
+                textColor: Theme.of(context).buttonColor,
+                onPressed: _onSubmitData,
+              )
+            ],
+          ),
         ),
       ),
     );
