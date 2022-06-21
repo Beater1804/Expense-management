@@ -55,7 +55,7 @@ class _NewTransactionState extends State<NewTransaction> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Card(
-        elevation: 5,
+        elevation: 6,
         child: Container(
           padding: EdgeInsets.only(
             top: 10,
